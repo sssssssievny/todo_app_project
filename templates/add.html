@@ -1,0 +1,32 @@
+{%extends 'base.html' %}
+{% block content %}
+
+<h1 class="main-header">Add Todo</h1>
+
+<div class="row">
+    </button><br><br>
+    <form class="ui fluid form" method="POST">
+            <div class="field" placeholder="Last Name">
+                <div class="ui pointing below label">
+                    Enter title here
+                </div>
+            {{form.hidden_tag()}}
+            {{form.title()}}
+        </div>
+
+        <div class="ui form">
+            <div class="field">
+                <div class="ui pointing below label">
+                    Enter description here
+                </div>
+            {{form.description()}}
+            </div>
+        </div><br>
+
+            {{form.submit(class="ui grey button")}}
+            <a href="{{url_for('index')}}"class="negative ui button">Cancel</a>
+    </form><br>
+</div>
+
+
+{% endblock %}

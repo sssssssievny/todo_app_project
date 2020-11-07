@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        background: grey;
+    }
+    .hero{
+        height: 100%;
+        width: 100%;
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+    }
+    .form-box{
+        width: 380px;
+        height: 480px;
+        position: relative;
+        margin: 6% auto;
+        background: pink;
+        padding: 5px;
+    }
+    .button-box{
+        width: 220px;
+        margin: 35px auto;
+        position: relative;
+        box-shadow: 0 0 20px 9px grey;
+        background: white;
+    }
+     
+    .toggle-btn{
+        padding: 10px 30px;
+        cursor: pointer;
+        background: transparent;
+        border: 0;
+        outline: none;
+        position: relative;
+    }
+    #btn{
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 110px;
+        height: 100%;
+        background: linear-gradient(to right, teal, teal);
+        transition: .5s;
+    }
+    .input-group{
+        top: 180px;
+        position: absolute;
+        width: 280px;
+        transition: .5s;
+    }
+    .input-field{
+        width: 350px;
+        padding: 10px 0;
+        margin: 5px 10px;
+        border-left: 0;
+        border-top: 0;
+        border-right: 0;
+        border-bottom: 1px solid teal;
+        outline: none;
+        background: white;
+    }
+</style>
+<body>
+    <div class="hero">
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn">Log In</button>
+                <button type="button" class="toggle-btn">Register</button>
+            </div>
+            <div class="ui horizontal divider">
+                OR
+            </div>
+            <form action="" class="input-group">
+                <input type="text" class="input-field", placeholder="userID" required>
+                <input type="text" class="input-field", placeholder="password" required>
+                <button type="submit" class="submit-btn">Log In</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

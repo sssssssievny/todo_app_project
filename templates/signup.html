@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="signup">
+    <div class="ui card">
+        <div class="content">
+        <div class="header">Sign Up</div>
+        </div>
+        <div class="content">
+        <div class="icon-group">
+            <a href=""><img src="{{url_for('static', filename='instagram.png')}}"></a>
+            <a href=""><img src="{{url_for('static', filename='facebook.png')}}"></a>
+            <a href=""><img src="{{url_for('static', filename='google.png')}}"></a>
+        </div><br>
+        <form class="ui form" method="POST">
+            {{form.hidden_tag()}}
+            {{form.username(placeholder="username")}} <br><br>
+            {{form.email(placeholder="email")}} <br><br>
+            {{form.password(placeholder="password")}} <br><br>
+            {{form.confirm_password(placeholder="confirm password")}}
+        </div>
+        <div class="extra content">
+            {{form.submit(class="ui button")}}
+            <a href="{{url_for('index')}}"class="negative ui button">Cancel</a>
+        </div>
+        <div class="or">
+            <p>Already have an account? | <a href="{{url_for('signin')}}">Sign In</a>
+            </p>
+        </div>
+        <!-- <div class="ui horizontal divider">
+            Or
+        </div> -->
+    </form>
+    </div>
+</div>
+{% endblock %}

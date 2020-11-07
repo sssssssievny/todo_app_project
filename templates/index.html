@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="main-header">Ninja Todo List</h1>
+
+<div class="add">
+    <a href="{{url_for('add')}}"><i class="huge alternate pencil icon"></i></a>
+</div>
+
+
+<div class="todo">
+
+<div class="ui cards">
+    {% for card in todos %}
+    <div class="card">
+      <div class="content">
+        <div class="header">
+          {{card.title}}
+        </div>
+        <div class="description">
+            {{card.description}} <br><br>
+            {% if card.complete %}
+            <!-- <span class="ui red tag labe">Completed</span> -->
+            <!-- <a class="ui red tag label">Upcoming</a> -->
+            <span class="ui teal tag label">Completed</span>
+            {% else %}
+            <span class="ui tag label">In progress</span>
+            {% endif %}
+        </div>
+      </div>
+      <div class="extra content">
+        <div class="ui two buttons">
+            <a href="/update/{{card.id}}" class="ui basic green button" >Update</a>
+            <a class="ui basic red button" href="/delete/{{card.id}}">Delete</a>
+          <!-- <div class="ui basic green button"><a href="/update/{{card.id}}">Update</a></div> -->
+          <!-- <div class="ui basic red button" href><a href="/delete/{{card.id}}">Delete</a></div> -->
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
+
+

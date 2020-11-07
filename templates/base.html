@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+</head>
+<style>
+    .row{
+        margin: 30px;
+        width: 40%;
+    }
+    .signup{
+        display: flex;
+        justify-content: center;
+    }
+    .or{
+        margin: 20px;
+    }
+    .todo{
+        margin: 30px;
+    }
+    .main-header{
+        margin: 30px;
+    }
+    .add{
+        margin: 30px;
+        font-weight: 3rem;
+    }
+    img{
+        width: 50px;
+        height: 50px;
+    }
+    .icon-group{
+        display: flex;
+        justify-content: center;
+    }
+    .hero{
+        height: 100%;
+        width: 100%;
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+    }
+    .button-box{
+        width: 220px;
+        margin: 35px auto;
+        position: relative;
+        box-shadow: 0 0 20px 9px grey;
+        background: white;
+    }
+    .toggle-btn{
+        padding: 10px 30px;
+        cursor: pointer;
+        background: transparent;
+        border: 0;
+        outline: none;
+        position: relative;
+    }
+    #btn{
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 110px;
+        height: 100%;
+        background: linear-gradient(to right, teal, teal);
+        transition: .5s;
+    }
+    .input-group{
+        top: 180px;
+        position: absolute;
+        width: 280px;
+        transition: .5s;
+    }
+    .input-field{
+        width: 350px;
+        padding: 10px 0;
+        margin: 5px 10px;
+        border-left: 0;
+        border-top: 0;
+        border-right: 0;
+        border-bottom: 1px solid teal;
+        outline: none;
+        background: white;
+    }
+</style>
+<body>
+    <div class="ui secondary pointing menu">
+        <a class="item" href="{{url_for('index')}}">
+            Home
+        </a>
+        <a class="item">
+            Messages
+        </a>
+        <a class="item">
+            Blog
+        </a>
+        <div class="right menu">
+            <a class="ui item" href="{{url_for('signin')}}">
+                Sign In
+            </a>
+        </div>
+    </div>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
+
+
+
+
+
+<!-- 
+<h1 class="ui header">To Do List</h1>
+{% for i in todos %}
+    <div class="ui cards">
+        <div class="card">
+            <div class="content">
+                <div class="header">
+                    {{i.id}} | {{i.title}}
+                </div>
+                <div class="meta">
+                    Lorem ipsum dolor sit amet.
+                </div>
+                <div class="description">
+                    <h5>{{i.description}}</h5>
+                    {% if i.complete %}
+                        Completed
+                    {% else %}
+                        <p>Not completed</p>
+                    {% endif %}
+                </div>
+        </div>
+        <div class="extra content">
+            <div class="ui two buttons">
+            <div class="ui basic green button"><a href="/update/{{i.id}}">Update</a></div>
+            <div class="ui basic red button"><a href="/delete/{{i.id}}">Delete</a></div>
+            </div>
+        </div>
+        </div>
+    </div>
+    {% endfor %} -->
